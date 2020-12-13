@@ -1,0 +1,9 @@
+# official model files are on gdrive but I could not find a way to download from gdrive.
+TTS_MODEL_URL = 'https://www.dropbox.com/sh/z62xzmh6qvmn6r0/AAD2e_aoL6nlwj24gLvsUtj6a?dl=0' 
+PWGAN_MODEL_URL = 'https://www.dropbox.com/sh/fz8iixkhv68zsb4/AABlrNomybrGIinOrgLhZeosa?dl=0'
+
+!wget -O tts_model.zip --no-check-certificate "$TTS_MODEL_URL" 
+!wget -O pwgan_model.zip --no-check-certificate "$PWGAN_MODEL_URL"
+
+!unzip tts_model.zip -d tts_model/
+!unzip pwgan_model.zip -d pwgan_model/
