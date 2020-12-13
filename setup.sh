@@ -92,7 +92,7 @@ fi
 #-----------------------------------
 # Install nltk dependencies
 #-----------------------------------
-python3 -c "import nltk; nltk.download('punkt'); nltk.download('averaged_perceptron_tagger')"
+python3 -c "import nltk; nltk.download(info_or_id='punkt'); nltk.download(info_or_id='averaged_perceptron_tagger')"
 
 RESULT=$?
 if  [ $RESULT -eq 0 ]; then
@@ -133,13 +133,13 @@ sudo apt-get install gnupg
 wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
 
 # Create the /etc/apt/sources.list.d/mongodb-org-4.2.list file for Ubuntu 16.04 (Xenial):
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 
 # Reload local package database
 sudo apt-get update
 
 # Install a specific release of MongoDB
-sudo apt-get install -y mongodb-org=4.2.5 mongodb-org-server=4.2.5 mongodb-org-shell=4.2.5 mongodb-org-mongos=4.2.5 mongodb-org-tools=4.2.5
+sudo apt-get install -y mongodb-org
 
 #-----------------------------------
 # Finished

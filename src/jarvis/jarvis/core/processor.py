@@ -60,6 +60,7 @@ class Processor:
         transcript = jarvis.input_engine.recognize_input()
         skill = self.skill_analyzer.extract(transcript)
 
+
         if skill:
             # ----------------------------------------------------------------------------------------------------------
             # Successfully extracted skill
