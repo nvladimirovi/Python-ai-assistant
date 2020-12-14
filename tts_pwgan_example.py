@@ -22,9 +22,6 @@ def tts(model, text, CONFIG, use_cuda, ap, use_gl, figures=True):
     OUT_FOLDER = 'result'
     os.makedirs(OUT_FOLDER, exist_ok=True)
     file_name = text.replace(" ", "_").replace(".","") + ".wav"
-    out_path = os.path.join(OUT_FOLDER, file_name)
-
-    print(waveform)
 
     ap.save_wav(waveform, file_name)
     
@@ -107,5 +104,5 @@ if use_gl == False:
         vocoder_model.cuda()
     vocoder_model.eval()
 
-sentence =  "Bill got in the habit of asking himself “Is that thought true?” and if he wasn’t absolutely certain it was, he just let it go."
+sentence = "Hello, sir!"
 align, spec, stop_tokens, wav = tts(model, sentence, TTS_CONFIG, use_cuda, ap, use_gl=use_gl, figures=True)

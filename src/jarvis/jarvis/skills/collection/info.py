@@ -58,7 +58,7 @@ class AssistantInfoSkills(AssistantSkill):
         """
         Responses that assistant can hear the user.
         """
-        cls.response('Hey human!')
+        cls.response('Hello sir!')
 
     @classmethod
     def tell_the_skills(cls, **kwargs):

@@ -1,0 +1,95 @@
+allow_cache: true
+audio:
+  clip_norm: true
+  do_trim_silence: true
+  frame_length_ms: 50
+  frame_shift_ms: 12.5
+  max_norm: 4
+  mel_fmax: 8000.0
+  mel_fmin: 0.0
+  min_level_db: -100
+  num_freq: 1025
+  num_mels: 80
+  preemphasis: 0.98
+  ref_level_db: 20
+  sample_rate: 22050
+  signal_norm: true
+  sound_norm: false
+  symmetric_norm: true
+augment: false
+batch_max_steps: 27225
+batch_size: 4
+config: parallel_wavegan/tts_config_v2.yaml
+datasets:
+- metafile_train: metadata.txt
+  metafile_val: null
+  name: tts_gen
+  path: /root/LJSpeech-1.1/pwgan_augment/
+  stats: null
+discriminator_grad_norm: 1
+discriminator_optimizer_params:
+  eps: 1.0e-06
+  lr: 5.0e-05
+  weight_decay: 0.0
+discriminator_params:
+  dropout: 0.0
+  gate_channels: 64
+  in_channels: 1
+  kernel_size: 3
+  layers: 30
+  nonlinear_activation: LeakyReLU
+  nonlinear_activation_params:
+    negative_slope: 0.2
+  out_channels: 1
+  residual_channels: 32
+  skip_channels: 32
+  stacks: 3
+  use_weight_norm: true
+discriminator_scheduler_params:
+  gamma: 0.5
+  step_size: 200000
+discriminator_train_start_steps: 100000
+discriminator_type: ResidualParallelWaveGANDiscriminator
+distributed: false
+eval_interval_steps: 1000
+generator_grad_norm: 10
+generator_optimizer_params:
+  eps: 1.0e-06
+  lr: 0.0001
+  weight_decay: 0.0
+generator_params:
+  aux_channels: 80
+  aux_context_window: 2
+  dropout: 0.0
+  gate_channels: 128
+  in_channels: 1
+  kernel_size: 3
+  layers: 30
+  out_channels: 1
+  residual_channels: 64
+  skip_channels: 64
+  stacks: 3
+  upsample_net: ConvInUpsampleNetwork
+  upsample_params:
+    upsample_scales:
+    - 5
+    - 5
+    - 11
+  use_weight_norm: true
+generator_scheduler_params:
+  gamma: 0.5
+  step_size: 200000
+generator_type: ParallelWaveGANGenerator
+hop_size: 275
+lambda_adv: 4.0
+log_interval_steps: 100
+num_save_intermediate_results: 4
+num_workers: 2
+outdir: /data7/rw/pit/keep/pwgan-ljspeech/
+pin_memory: true
+rank: 0
+remove_short_samples: true
+resume: /data7/rw/pit/keep/pwgan-ljspeech/checkpoint-364819steps.pkl
+save_interval_steps: 5000
+train_max_steps: 400000
+verbose: 1
