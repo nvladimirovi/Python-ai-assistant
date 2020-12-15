@@ -46,10 +46,10 @@ from parallel_wavegan.models import ParallelWaveGANGenerator
 from parallel_wavegan.utils.audio import AudioProcessor as AudioProcessorVocoder
 
 # model paths
-TTS_MODEL = "tts_model2/checkpoint_670000.pth.tar"
-TTS_CONFIG = "tts_model2/config.json"
-PWGAN_MODEL = "pwgan_model2/checkpoint-400000steps.pkl"
-PWGAN_CONFIG = "pwgan_model2/config.yml"
+TTS_MODEL = "tts_model/checkpoint_670000.pth.tar"
+TTS_CONFIG = "tts_model/config.json"
+PWGAN_MODEL = "pwgan_model/checkpoint-400000steps.pkl"
+PWGAN_CONFIG = "pwgan_model/config.yml"
 
 # load TTS config
 TTS_CONFIG = load_config(TTS_CONFIG)
