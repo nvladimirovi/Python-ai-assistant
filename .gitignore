@@ -1,2 +1,8 @@
 # created by virtualenv automatically
-*
+__pycache__
+tts_model
+my_env
+.vscode
+pwgan_model
+*.wav
+*.zip

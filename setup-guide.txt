@@ -1,0 +1,5 @@
+Install mongo
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+Problems with mongo
+https://stackoverflow.com/questions/59215476/cant-install-mongodb-properly-from-terminal-ubuntu-18-04-lts
